@@ -4,11 +4,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.Debug;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView userData;
     private String adminMac;
     private Person p;
+    private Button post;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFire;
@@ -33,14 +39,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+       setContentView(R.layout.activity_main);
+
 
         mAuth = FirebaseAuth.getInstance();
         mFire = FirebaseFirestore.getInstance();
 
-        userData = (TextView) findViewById(R.id.UserData);
+       // userData = (TextView) findViewById(R.id.UserData);
         mainToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);
+        post = (Button) findViewById(R.id.AddPost);
+        post.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent PostInt = new Intent(MainActivity.this,PostActivity.class);
+                startActivity(PostInt);
+            }
+        });
+
         adminMac = "708a09cf34f7";
         getSupportActionBar().setTitle("لنتواصل");
 
@@ -69,9 +85,8 @@ public class MainActivity extends AppCompatActivity {
                         p.setName(task.getResult().getString("name"));
                         p.setAddress(task.getResult().getString("address"));
                         p.setPhone(task.getResult().getString("phone"));
-                        userData.setText(p.getName() +"\n" + p.getPhone() + "\n" + p.getAddress() +"\n" );
+                      //  userData.setText(p.getName() +"\n" + p.getPhone() + "\n" + p.getAddress() +"\n" );
                     }
-
                 }
             }
         });
@@ -114,4 +129,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(LoginIntent);
         finish(); //user cannot go back until log in
     }
+
+
 }
