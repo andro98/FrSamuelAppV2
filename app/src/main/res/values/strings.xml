@@ -12,4 +12,6 @@
     <string name="Log_Phone">رقم الهاتف</string>
     <string name="Log_Address">العنوان</string>
     <string name="RegConf">تأكيد كلمة المرور</string>
+    <string name="Post_String">اكتب ما تريد</string>
+    <string name="Add_Post_Btn">اضف</string>
 </resources>
