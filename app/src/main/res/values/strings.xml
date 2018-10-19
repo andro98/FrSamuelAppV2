@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">لنتواصل</string>
+    <string name="Log_Wel">اهلا بكم</string>
+    <string name="Log_email">البريد الإلكترونى</string>
+    <string name="Log_psw">كلمة المرور</string>
+    <string name="Log_btn_enter">دخول</string>
+    <string name="Log_btn_reg">تسجيل</string>
+    <string name="Log_Wel_Desc">Logo for login page</string>
+    <string name="action_Setting">إعدادات</string>
+    <string name="action_logout">خروج</string>
+    <string name="Log_Name">الأسم</string>
+    <string name="Log_Phone">رقم الهاتف</string>
+    <string name="Log_Address">العنوان</string>
+    <string name="RegConf">تأكيد كلمة المرور</string>
+</resources>

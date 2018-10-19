@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "236421406269",
+    "firebase_url": "https://frsamuelappv2.firebaseio.com",
+    "project_id": "frsamuelappv2",
+    "storage_bucket": "frsamuelappv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236421406269:android:0616570e3519d293",
+        "android_client_info": {
+          "package_name": "com.example.frsamuel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236421406269-s9af5ml7kvkg8ghsbpqiq9cvj6nk7emi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.frsamuel",
+            "certificate_hash": "4d4f62572f356bb93798210bb61469165a4d392e"
+          }
+        },
+        {
+          "client_id": "236421406269-tpviqp16u6tvko59ca6lgpfcuesb90c8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjKcHmOnoyEAn97Lm9dmX4GencRdioo20"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236421406269-tpviqp16u6tvko59ca6lgpfcuesb90c8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
