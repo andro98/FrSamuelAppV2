@@ -6,7 +6,10 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Debug;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
     private String adminMac;
     private Person p;
     private Button post;
+    private BottomNavigationView mainBottomNav;
+
+    private HomeFrag homeFrag;
+    private InboxFrag inboxFrag;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFire;
@@ -46,8 +53,11 @@ public class MainActivity extends AppCompatActivity {
         mFire = FirebaseFirestore.getInstance();
 
        // userData = (TextView) findViewById(R.id.UserData);
+
         mainToolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("لنتواصل");
+
         post = (Button) findViewById(R.id.AddPost);
         post.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +68,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         adminMac = "708a09cf34f7";
-        getSupportActionBar().setTitle("لنتواصل");
+
+        mainBottomNav = findViewById(R.id.MainButtonNav);
+        homeFrag = new HomeFrag();
+        inboxFrag = new InboxFrag();
+
+        mainBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId())
+                {
+                    case R.id.Buttom_Home:
+                        replaceFragment(homeFrag);
+                        return true;
+                    case R.id.Buttom_Inbox:
+                        replaceFragment(inboxFrag);
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
 
     }
 
@@ -128,6 +158,13 @@ public class MainActivity extends AppCompatActivity {
         Intent LoginIntent = new Intent (MainActivity.this, LoginActivity.class);
         startActivity(LoginIntent);
         finish(); //user cannot go back until log in
+    }
+
+    private void replaceFragment(Fragment fragment)
+    {
+        FragmentTransaction fragTrans = getSupportFragmentManager().beginTransaction();
+        fragTrans.replace(R.id.MainContainer,fragment);
+        fragTrans.commit();
     }
 
 

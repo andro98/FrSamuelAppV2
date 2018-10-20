@@ -14,4 +14,9 @@
     <string name="RegConf">تأكيد كلمة المرور</string>
     <string name="Post_String">اكتب ما تريد</string>
     <string name="Add_Post_Btn">اضف</string>
+    <string name="HomeBtn">Home</string>
+    <string name="InboxBtn">Inbox</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

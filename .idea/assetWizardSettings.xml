@@ -20,8 +20,8 @@
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
                                       <entry key="iconShape" value="CIRCLE" />
-                                      <entry key="imageAsset" value="C:\Users\AndrOoO\Desktop\if_add_134224.png" />
-                                      <entry key="outputName" value="AddBtn" />
+                                      <entry key="imageAsset" value="C:\Users\AndrOoO\Desktop\baseline-home-black-24\2x\baseline_home_black_24dp.png" />
+                                      <entry key="outputName" value="home" />
                                     </map>
                                   </option>
                                 </PersistentState>
