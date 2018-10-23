@@ -5,9 +5,11 @@
     <item
         android:id="@+id/Buttom_Home"
         android:icon="@mipmap/home"
-        android:title="@string/HomeBtn" />
+        android:title="@string/HomeBtn"
+        android:visible="true" />
     <item
         android:id="@+id/Buttom_Inbox"
         android:icon="@mipmap/message"
-        android:title="@string/InboxBtn" />
+        android:title="@string/InboxBtn"
+        android:visible="true" />
 </menu>
