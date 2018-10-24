@@ -58,38 +58,40 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(mainToolbar);
         getSupportActionBar().setTitle("لنتواصل");
 
-        post = (Button) findViewById(R.id.AddPost);
-        post.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent PostInt = new Intent(MainActivity.this,PostActivity.class);
-                startActivity(PostInt);
-            }
-        });
+        if(mAuth.getCurrentUser() != null){
 
-        adminMac = "708a09cf34f7";
+            mainBottomNav = findViewById(R.id.MainButtonNav);
+            homeFrag = new HomeFrag();
+            inboxFrag = new InboxFrag();
+            replaceFragment(homeFrag);
 
-        mainBottomNav = findViewById(R.id.MainButtonNav);
-        homeFrag = new HomeFrag();
-        inboxFrag = new InboxFrag();
 
-        mainBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId())
-                {
-                    case R.id.Buttom_Home:
-                        replaceFragment(homeFrag);
-                        return true;
-                    case R.id.Buttom_Inbox:
-                        replaceFragment(inboxFrag);
-                        return true;
-                    default:
-                        return false;
+            post = (Button) findViewById(R.id.AddPost);
+            post.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent PostInt = new Intent(MainActivity.this,PostActivity.class);
+                    startActivity(PostInt);
                 }
-            }
-        });
+            });
 
+            mainBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                    switch (menuItem.getItemId())
+                    {
+                        case R.id.Buttom_Home:
+                            replaceFragment(homeFrag);
+                            return true;
+                        case R.id.Buttom_Inbox:
+                            replaceFragment(inboxFrag);
+                            return true;
+                        default:
+                            return false;
+                    }
+                }
+            });
+        }
     }
 
     @Override
