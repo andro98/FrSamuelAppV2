@@ -2,22 +2,23 @@ package com.example.frsamuel;
 
 import java.sql.Time;
 import java.sql.Timestamp;
+import java.util.Date;
 
-public class Posts {
+public class Posts extends PostID{
     private String post;
     private String user_id;
-   // private Timestamp time;
+    private Date time;
 
     public Posts()
     {
 
     }
 
-    public Posts(String user_id, String post)
+    public Posts(String user_id, String post, Date time)
     {
         this.post = post;
         this.user_id = user_id;
-        //this.time = time;
+        this.time = time;
     }
 
     public String getPost() {
@@ -36,11 +37,12 @@ public class Posts {
         this.user_id = user_id;
     }
 
-   /* public Timestamp getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(Date time) {
         this.time = time;
-    }*/
+    }
+
 }
